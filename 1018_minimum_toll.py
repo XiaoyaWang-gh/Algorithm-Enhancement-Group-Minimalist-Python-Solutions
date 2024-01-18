@@ -19,9 +19,9 @@ def main():
                 f[i][j] = w[i][j]
             else:
                 f[i][j] = INF
-                if i>1:
+                if i>1:# 不在第一行，才可以从上面过来
                     f[i][j] = min(f[i][j], f[i-1][j] + w[i][j])
-                if j>1:
+                if j>1:# 不在第一列，才可以从左边过来
                     f[i][j] = min(f[i][j], f[i][j-1] + w[i][j])
 
     for k in range(N+1):
